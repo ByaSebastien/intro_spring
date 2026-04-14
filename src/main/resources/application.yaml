@@ -1,0 +1,4 @@
+spring:
+  application:
+    name: intro_spring
+port: 8080
