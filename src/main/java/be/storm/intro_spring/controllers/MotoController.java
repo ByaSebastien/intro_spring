@@ -1,7 +1,8 @@
 package be.storm.intro_spring.controllers;
 
-import be.storm.intro_spring.data.FakeDb;
-import be.storm.intro_spring.models.Moto;
+import be.storm.intro_spring.entities.Bike;
+import be.storm.intro_spring.repositories.BikeRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -10,14 +11,22 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/moto")
+@RequiredArgsConstructor
 public class MotoController {
+
+    private final BikeRepository  bikeRepository;
+
+    // RequiredArgsConstructor
+//    public MotoController(BikeRepository bikeRepository) {
+//        this.bikeRepository = bikeRepository;
+//    }
 
 
     @GetMapping
     public String index(
             Model model
     ){
-        List<Moto> motos = FakeDb.MOTOS;
+        List<Bike> motos = bikeRepository.findAll();
         model.addAttribute("motos",motos);
         return "moto/index";
     }
@@ -27,10 +36,7 @@ public class MotoController {
             @PathVariable Integer id,
             Model model
     ) {
-        Moto moto = FakeDb.MOTOS.stream()
-                .filter(m -> m.getId().equals(id))
-                .findFirst()
-                .orElseThrow();
+        Bike moto = bikeRepository.findById(id).orElseThrow();
 
         model.addAttribute("moto",moto);
 
@@ -41,15 +47,15 @@ public class MotoController {
     public String create(
             Model model
     ) {
-        model.addAttribute("moto",new Moto());
+        model.addAttribute("moto",new Bike());
         return "moto/create";
     }
 
     @PostMapping("/create")
     public String create(
-            @ModelAttribute Moto moto
+            @ModelAttribute Bike moto
     ){
-        FakeDb.MOTOS.add(moto);
+        bikeRepository.save(moto);
         return "redirect:/moto";
     }
 }

@@ -10,7 +10,6 @@
 <body>
 <h1>Create new Moto</h1>
 <form action="/moto/create" method="post">
-    <input type="hidden" value="${moto.id}" name="id">
     <div>
         <label for="brand">Brand :</label>
         <input type="text" name="brand" id="brand" value="${moto.brand}">
