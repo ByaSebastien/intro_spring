@@ -12,6 +12,7 @@
     <a href="/home">Home</a>
     <a href="/home/about">About</a>
     <a href="/tf/java/thebest">The Best</a>
+    <a href="/moto">Moto</a>
 </nav>
 <h1>About</h1>
 </body>

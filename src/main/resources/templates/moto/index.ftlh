@@ -13,8 +13,8 @@
 <ul>
     <#list motos as moto>
         <li>
-            <a href="/moto/${moto.id}">
-                ${moto.id} | ${moto.brand} | ${moto.model}
+            <a href="/moto/${moto.id()}">
+                ${moto.brand()} | ${moto.model()}
             </a>
         </li>
     </#list>

@@ -10,8 +10,9 @@
 <body>
 <nav>
     <a href="/home">Home</a>
-    <a href="/home/about">About</a>
+    <a href="/about">About</a>
     <a href="/tf/java/thebest">The Best</a>
+    <a href="/moto">Moto</a>
 </nav>
 <h1>We are the best</h1>
 <h2>We are the java</h2>

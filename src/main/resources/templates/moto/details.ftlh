@@ -11,13 +11,13 @@
 <h1>Details</h1>
 <dl>
     <dt>Id</dt>
-    <dd>${moto.id}</dd>
+    <dd>${moto.id()}</dd>
     <dt>Brand</dt>
-    <dd>${moto.brand}</dd>
+    <dd>${moto.brand()}</dd>
     <dt>Model</dt>
-    <dd>${moto.model}</dd>
+    <dd>${moto.model()}</dd>
     <dt>Power</dt>
-    <dd>${moto.power}</dd>
+    <dd>${moto.power()}</dd>
 </dl>
 <a href="/moto">Back to list</a>
 </body>

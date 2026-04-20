@@ -24,4 +24,14 @@ public class Bike {
 
     @Getter @Setter
     private int power;
+
+    @Getter @Setter
+    private int cylinder;
+
+    public Bike(String brand, String model, int power, int cylinder) {
+        this.brand = brand;
+        this.model = model;
+        this.power = power;
+        this.cylinder = cylinder;
+    }
 }
